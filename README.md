@@ -151,7 +151,3 @@ Current activities include:
 * Identification of core business domains
 * Microservice decomposition
 * Architectural planning and documentation
-
-## License
-
-This project is developed for academic purposes as part of a university coursework assignment. Update this section with an appropriate open-source license if the project is intended for public distribution.
