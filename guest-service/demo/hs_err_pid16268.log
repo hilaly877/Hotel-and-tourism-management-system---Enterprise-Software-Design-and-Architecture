@@ -1,0 +1,244 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 98566144 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3714), pid=16268, tid=18936
+#
+# JRE version:  (21.0.11+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.11+10-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dclassworlds.conf=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\bin\m2.conf -Dmaven.home=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0 -Dlibrary.jansi.path=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\lib\jansi-native -Dmaven.multiModuleProjectDirectory=E:\Enterprise\guest-service\demo org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -e
+
+Host: AMD Ryzen 7 5700U with Radeon Graphics         , 16 cores, 5G,  Windows 11 , 64 bit Build 26100 (10.0.26100.8521)
+Time: Fri Jun 12 16:34:13 2026 Sri Lanka Standard Time elapsed time: 0.022667 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000023aa3608a80):  JavaThread "Unknown thread" [_thread_in_vm, id=18936, stack(0x0000008583f00000,0x0000008584000000) (1024K)]
+
+Stack: [0x0000008583f00000,0x0000008584000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d7e19]
+V  [jvm.dll+0x8b5096]
+V  [jvm.dll+0x8b764e]
+V  [jvm.dll+0x8b7d33]
+V  [jvm.dll+0x284596]
+V  [jvm.dll+0x6d4735]
+V  [jvm.dll+0x6c845a]
+V  [jvm.dll+0x35ef08]
+V  [jvm.dll+0x366b46]
+V  [jvm.dll+0x3b7c2e]
+V  [jvm.dll+0x3b7ed8]
+V  [jvm.dll+0x33310c]
+V  [jvm.dll+0x333c5b]
+V  [jvm.dll+0x87f04b]
+V  [jvm.dll+0x3c4bb1]
+V  [jvm.dll+0x868295]
+V  [jvm.dll+0x457c41]
+V  [jvm.dll+0x459831]
+C  [jli.dll+0x52dc]
+C  [ucrtbase.dll+0x2cd30]
+C  [KERNEL32.DLL+0x2e957]
+C  [ntdll.dll+0x87c1c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe7827b1c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000023aa5a55930 WorkerThread "GC Thread#0"                     [id=16596, stack(0x0000008584000000,0x0000008584100000) (1024K)]
+  0x0000023aa5a80410 ConcurrentGCThread "G1 Main Marker"            [id=15796, stack(0x0000008584100000,0x0000008584200000) (1024K)]
+  0x0000023aa5a83980 WorkerThread "G1 Conc#0"                       [id=2044, stack(0x0000008584200000,0x0000008584300000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe779757f7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffe782ef670] Heap_lock - owner thread: 0x0000023aa3608a80
+
+Heap address: 0x00000000a2600000, size: 1498 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000a2600000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe77d61789]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.014 Loaded shared library C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6c00e0000 - 0x00007ff6c00ee000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\java.exe
+0x00007fff2c1e0000 - 0x00007fff2c446000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff2b040000 - 0x00007fff2b109000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff296e0000 - 0x00007fff29ada000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff29d50000 - 0x00007fff29e9c000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffee3480000 - 0x00007ffee349e000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\VCRUNTIME140.dll
+0x00007ffee3020000 - 0x00007ffee3038000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\jli.dll
+0x00007fff2bb00000 - 0x00007fff2bcc7000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff29470000 - 0x00007fff29497000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff2a940000 - 0x00007fff2a96b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff156e0000 - 0x00007fff15972000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8521_none_3e08b75ce33403b3\COMCTL32.dll
+0x00007fff29ae0000 - 0x00007fff29c0b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff2bce0000 - 0x00007fff2bd89000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff29ea0000 - 0x00007fff29f43000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff2aa70000 - 0x00007fff2aaa2000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff18e50000 - 0x00007fff18e5c000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\vcruntime140_1.dll
+0x00007ffed0eb0000 - 0x00007ffed0f3d000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\msvcp140.dll
+0x00007ffe77630000 - 0x00007ffe783d2000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\server\jvm.dll
+0x00007fff2b6c0000 - 0x00007fff2b776000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff2b780000 - 0x00007fff2b82a000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff2b110000 - 0x00007fff2b228000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff2ba20000 - 0x00007fff2baa0000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff292d0000 - 0x00007fff2932e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007fff1ecf0000 - 0x00007fff1ed26000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff1f690000 - 0x00007fff1f69b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff292b0000 - 0x00007fff292c4000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007fff28200000 - 0x00007fff2821b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffefd6a0000 - 0x00007ffefd6aa000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\jimage.dll
+0x00007fff26850000 - 0x00007fff26a92000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fff2be10000 - 0x00007fff2c193000 	C:\WINDOWS\System32\combase.dll
+0x00007fff2ace0000 - 0x00007fff2adb9000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff165e0000 - 0x00007fff1661b000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff29c10000 - 0x00007fff29cb8000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffedfbd0000 - 0x00007ffedfbf0000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8521_none_3e08b75ce33403b3;C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin\server
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\bin\m2.conf -Dmaven.home=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0 -Dlibrary.jansi.path=C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\lib\jansi-native -Dmaven.multiModuleProjectDirectory=E:\Enterprise\guest-service\demo 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -e
+java_class_path (initial): C:\Users\reeha\.m2\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\boot\plexus-classworlds-2.11.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 98566144                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1570766848                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1570766848                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\
+PATH=C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe;c:\Users\reeha\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\reeha\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\apache-maven-3.9.16\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin;C:\Program Files\PostgreSQL\18\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\MATLAB\R2022b\runtime\win64;C:\Program Files\MATLAB\R2022b\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;E:\New Folder\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\180\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Users\reeha\AppData\Local\Programs\PHP\current;C:\Users\reeha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\reeha\AppData\Local\Programs\Python\Python311\;C:\Users\reeha\AppData\Local\Programs\Python\Launcher\;C:\Users\reeha\AppData\Local\Microsoft\WindowsApps;C:\Users\reeha\AppData\Roaming\npm;C:\Users\reeha\AppData\Local\Python\bin;C:\Users\reeha\AppData\Local\Programs\Python\Python312\Scripts;D:\Antigravity\bin;E:\Microsoft VS Code\bin;C:\Users\reeha\AppData\Local\Programs\Ollama;C:\Users\reeha\AppData\Local\Microsoft\WinGet\Packages\GitHub.Copilot_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\reeha\.local\bin;D:\OCRFinetuning\tessdata;D:\;C:\Users\reeha\.dotnet\tools;c:\Users\reeha\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts
+USERNAME=reeha
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD
+TMP=C:\Users\reeha\AppData\Local\Temp
+TEMP=C:\Users\reeha\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.8521)
+OS uptime: 0 days 0:16 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 104 stepping 1 microcode 0x8608103, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, rdpid, f16c
+Processor Information for the first 16 processors :
+  Max Mhz: 1801, Current Mhz: 1801, Mhz Limit: 1801
+
+Memory: 4k page, system-wide physical 5989M (611M free)
+TotalPageFile size 12122M (AvailPageFile size 55M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 70M, peak: 164M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.11+10-LTS) for windows-amd64 JRE (21.0.11+10-LTS), built on 2026-04-21T00:00:00Z by "admin" with MS VC++ 17.12 (VS2022)
+
+END.
